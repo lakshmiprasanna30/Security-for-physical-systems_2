@@ -1,1 +1,8 @@
 flask
+gunicorn
+Jinja2
+itsdangerous
+Werkzeug
+click
+blinker
+MarkupSafe
