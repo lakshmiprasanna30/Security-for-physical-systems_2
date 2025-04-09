@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage and secure your components with Secure Component Manager. Prevent cyber threats and enhance data security.">
+  <meta name="keywords" content="Security, Component Management, Cybersecurity, Phishing, Device Monitoring">
+  <meta name="author" content="Secure Component Manager Team">
+  <meta name="theme-color" content="#004d99">
+  <title>Secure Component Manager</title>
+  <link rel="icon" href="https://imgur.com/8Ikxbaa.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #004d99;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #003366;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 12px 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #00bfff;
+    }
+
+    .main-content {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 40px;
+      background: #2c2c2c;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .main-content h2 {
+      font-size: 2.5rem;
+      color: #cec7c7;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .sections-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .section-card {
+      background: #333;
+      padding: 20px;
+      border-radius: 8px;
+      width: 220px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .section-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .section-card .icon {
+      font-size: 3rem;
+      color: #00bfff;
+      margin-bottom: 20px;
+    }
+
+    .section-card h3 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .section-card p {
+      font-size: 1rem;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+    .section-card .button {
+      background-color: #00bfff;
+      color: white;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .section-card .button:hover {
+      background-color: #009acf;
+    }
+
+    .footer {
+      background: #003366;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .service-section {
+      background: #333;
+      padding: 40px 20px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+
+    .service-section h3 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .service-description {
+      text-align: center;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+    .download-button {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background-color: #00bfff;
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .download-button:hover {
+      background-color: #009acf;
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .search-bar input {
+      padding: 10px;
+      font-size: 1rem;
+      border: 2px solid #004d99;
+      border-radius: 5px;
+      width: 300px;
+      outline: none;
+    }
+
+    .search-bar button {
+      padding: 10px 20px;
+      background-color: #004d99;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .search-bar button:hover {
+      background-color: #00bfff;
+    }
+
+    /* Responsive Layout */
+    @media (max-width: 768px) {
+      .sections-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .section-card {
+        width: 80%;
+      }
+
+      .service-section {
+        padding: 20px;
+      }
+    }
+    .service-section .section-card1{
+      width: 1080px;
+      height: auto;
+    }
+    .section-card1 {
+      background: #333;
+      padding: 20px;
+      border-radius: 8px;
+      width: 220px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .community {
+
+            display: block;
+            position: absolute; 
+            text-align: justify;
+            border-radius: 0.5;
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+            border: 1px solid #004d99;
+            border-radius: 5px;
+            transition: width 0.3s ease, height 0.3s ease, padding 0.3s ease;
+        }
+        .community button{
+          width: 100px;
+          height: 30px;
+          background-color: #004d99;
+        }
+        li:hover .community {
+            width: 400px;
+            padding: 20px;
+            height: auto;
+            overflow: visible;
+            flex-direction: column-reverse;
+            
+           
+        }
+        ul {
+            list-style-type: none;
+        }
+        ul {
+            list-style-type: none;
+        }
+        
+        li {
+            position: relative;
+            padding: 10px;
+            width: auto;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        li a {
+            text-decoration: none;
+            color: black;
+        }
+
+
+        li a {
+            text-decoration: none;
+            color: black;
+        }
+        .news {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+            border: 1px solid #004d99;
+            border-radius: 5px;
+            transition: width 0.3s ease, height 0.3s ease, padding 0.3s ease;
+        }
+        li:hover .news {
+            width: 500px;
+            height: auto;
+            overflow: visible;
+            flex-direction: column-reverse;
+            padding: 30px;
+        }
+        h1, h2, h3 {
+          text-align: center;
+          color: #0d6efd;
+        }
+        p {
+          text-align: justify;
+          margin-bottom: 20px;
+        }
+        ul {
+          margin-left: 40px;
+          margin-bottom: 20px;
+        }
+        .section {
+          background-color: #fff;
+          padding: 25px;
+          border-radius: 10px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+          margin-bottom: 30px;
+        }
+        code {
+          background-color: #f1f1f1;
+          padding: 4px 8px;
+          border-radius: 4px;
+          font-size: 15px;
+        }
+        h1, h2, h3 {
+      text-align: center;
+      color: #0d6efd;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+    ul {
+      margin-left: 40px;
+      margin-bottom: 20px;
+    }
+    .section {
+      background-color: #3a3a3a;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+    }
+    .hidden-content {
+      display: none;
+    }
+    .show-more {
+      display: block;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .button {
+      cursor: pointer;
+      background-color: #0d6efd;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    #download_section p{
+      
+      display: inline;
+      justify-content: space-between;
+      margin-right: 180px;
+
+    }
+    .hold{
+      margin-left: 150px;
+    }
+    
+  </style>
+  </head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>🔐 Secure Component Manager</h1>
+    <p>Manage and Secure Your Components With Confidence</p>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="javascript:void(0);" onclick="openAboutPage()" >About</a></li>
+      <li><a href="javascript:void(0);" onclick="showSection('community')">Community</a><div class="community"><p>We have recently designed this application with the goal of enhancing personal system security through features like phishing detection, USB monitoring, and device protection. This project is the first step toward creating a secure desktop environment. Join our community to share feedback, explore new ideas, and help shape the future improvements of this tool. Your support and collaboration can make it stronger and smarter!</p><br>
+      <button><a href="guide.html" target="_blank">Guide</a></button></div></li>
+      <li><a href="javascript:void(0);" onclick="scrollToServices()">our services</a></li>
+      <li><a href="javascript:void(0);" onclick="showSection('news')">News</a><div class="news"><p>📰 Project News & Updates
+        Our System Security Monitoring Application has reached a major development milestone! Recent updates have improved its accuracy and real-time response to common threats like:
+        
+        🔐 Phishing URLs – The system now detects suspicious links even faster using machine learning.
+        💾 USB Malware – We’ve strengthened USB scanning with improved MD5 file hashing and VirusTotal validation.
+        🎥 Webcam Protection – Real-time monitoring now blocks unknown apps from using your webcam without permission.
+        ⌨ Keystroke Injection Detection – The typing behavior analyzer now identifies potential injection attacks more reliably.
+        
+        These updates make the app more secure, stable, and user-friendly. Our goal is to provide a lightweight yet powerful desktop security solution for home users, students, and IT professionals.
+        
+        More features are coming soon, be alert.....!</p></div></li>
+      <li><a href="javascript:void(0);" onclick="scrollToDownload()">Downloads</a></li>
+      <li><a href="javascript:void(0);" onclick="scrollToDocumentation()">Documentation</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" placeholder="Search for content..." oninput="searchContent()">
+    <button onclick="searchContent()">Search</button>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="main-content">
+    <h2>Welcome to the Secure Component Manager</h2>
+    <p>Your one-stop solution for managing secure components and keeping your applications up-to-date with the latest and most secure components available.</p>
+
+    <!-- About Section -->
+    <div class="service-section" id="about">
+      <h3>About Us</h3>
+      <p>We are committed to providing top-tier security solutions to protect your data, your components, and your digital ecosystem. Our Secure Component Manager is built to be intuitive, reliable, and highly effective in preventing cyber threats.</p><br><br>
+      <div class="section-card1">
+        <p style="text-align:;">
+        This project focuses on building a Python-based desktop security application that enhances system protection by monitoring and preventing multiple types of threats in real-time. It addresses critical concerns such as USB-based malware, phishing URL detection, unauthorized webcam access, and keystroke injection attacks. The application uses a modular structure where each component works independently yet interacts through a central GUI, built using Python’s Tkinter library. The user interface provides easy navigation for both technical and non-technical users, offering access to features like login authentication, hardware control, and threat notifications. USB devices are scanned immediately upon connection using MD5 hashing and VirusTotal API integration to identify malicious files. Clipboard monitoring is continuously active, and any copied URL is instantly checked by a trained Random Forest machine learning model to determine whether it’s legitimate or a phishing link. Webcam usage is monitored using system process tracking, and if unauthorized access is detected, alerts are shown and access is blocked. Keystroke behavior is also analyzed to detect rapid or suspicious typing that could indicate a hardware-based attack like USB Rubber Ducky. The system responds by disabling access to devices, locking the screen, or prompting for user authentication. Logging functionality is built in to track all system responses and user actions for future auditing. SQLite is used to manage user credentials securely. The combination of automated detection, user alerts, and device control ensures that the system remains protected at all times. It is suitable for use in homes, educational institutions, and small business environments. The project demonstrates how open-source tools and machine learning can be combined to build a lightweight yet powerful endpoint security system</p>
+        <!--<button class="button" onclick="openDocumentation()">Learn More</button>-->
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="service-section" id="ourservices">
+      <h3>Our Services</h3>
+      <div class="service-description">
+        <p>We provide comprehensive security management services for your software components, including detection of vulnerabilities, phishing protection, and device monitoring.</p>
+      </div>
+      <div class="sections-container">
+        <!-- Service Cards -->
+        <div class="section-card">
+          <div class="icon">🔒</div>
+          <h3>Phishing Protection</h3>
+          <text>Detect phishing attempts in real-time to safeguard your data and privacy.</text><br>
+          <button class="button" onclick="openDocumentation()">Learn More</button>
+        </div>
+        <div class="section-card">
+          <div class="icon">🖥️</div>
+          <h3>Device Monitoring</h3>
+          <text>Monitor external device connections to prevent unauthorized access.</text><br><br>
+          <button class="button" onclick="openDocumentation()">Learn More</button>
+        </div>
+        <div class="section-card">
+          <div class="icon">⌨️</div>
+          <h3>Keystroke Protection</h3>
+          <text>Protect against keyloggers and other malicious software.</text><br>
+          <button class="button" onclick="openDocumentation()" style="margin-top: 23px;">Learn More</button>
+        </div>
+        <div class="section-card">
+          <div class="icon">📸</div>
+          <h3>Webcam Detection</h3>
+          <text>It allows only authorized access and block unauthorized access</text><br>
+          <button class="button" onclick="openDocumentation()">Learn More</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Downloads Section -->
+    <div class="service-section" id="download_section">
+      <div class="hold">
+      <h3>Download</h3>
+      <p>Secure Component Manager</p>
+      <p>Version</p>
+      <!-- Download Button -->
+      <a id="" class="" href="#" download>
+        <p>⬇️ Download</p>
+      </a></div>
+    </div>
+    <script>
+      document.getElementById("versionSelect").addEventListener("change", function() {
+        var version = this.value;
+        var downloadLink = {
+          "v1.0": "https://example.com/download/v1.0",
+          "v1.1": "https://example.com/download/v1.1",
+          "v2.0": "https://example.com/download/v2.0"
+        };
+    
+        // Update the download button link
+        document.getElementById("downloadBtn").href = downloadLink[version];
+      });
+    </script>
+
+     <!--documentation-->
+    
+
+  <div class="section" id="documentation">
+    <h1>🔐Documentation</h1>
+    <h2>🔎 Overview</h2>
+    <p>
+      In the rapidly evolving digital landscape, ensuring the security of computer systems has become a top priority. Malicious attacks targeting USB drives, phishing websites, webcam hijacking, and keystroke injection are increasingly common. This project delivers a comprehensive desktop application using Python that detects, prevents, and responds to these threats in real time.
+    </p>
+    <p>
+      The software is built with powerful system libraries and machine learning algorithms. It scans USB devices for potential malware, evaluates copied URLs for phishing threats, tracks unauthorized access to webcams, and detects fast, unnatural keystrokes that may indicate hacking attempts. Through an intuitive Tkinter-based GUI, users can perform security checks and respond to threats efficiently.
+    </p>
+  </div>
+
+
+  <div class="hidden-content" id="fullContent">
+    <div class="section">
+      <h2>🧠 Core Functionalities</h2>
+      <ul>
+        <li><strong>Phishing URL Detection:</strong> Clipboard URLs are captured and checked using a trained machine learning model to prevent phishing attacks.</li>
+        <li><strong>USB Malware Detection:</strong> USB insertion is detected instantly; files are scanned using hashing and verified via VirusTotal API.</li>
+        <li><strong>Webcam Monitoring:</strong> Monitors real-time webcam usage and blocks unknown processes from accessing it.</li>
+        <li><strong>Keystroke Injection Detection:</strong> Analyzes keystroke speed and patterns to detect scripted keystroke injections or hardware-based attacks.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🧮 Algorithms Used</h2>
+      <p><strong>Random Forest:</strong> A robust supervised learning algorithm used to classify URLs into phishing or legitimate.</p>
+      <p><strong>MD5 Hashing:</strong> Used to compare file hashes against known malicious files.</p>
+      <p><strong>Heuristic-Based Keystroke Analysis:</strong> Detects unnatural typing speed to prevent automated attacks.</p>
+    </div>
+  </div>
+
+  <div class="show-more">
+    <button class="button" onclick="toggleContent()">🔽</button>
+  </div>
+  
+  <script>
+    function toggleContent() {
+      var content = document.getElementById("fullContent");
+      var button = document.querySelector(".button");
+      if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        button.textContent = "show less";
+    
+      } else {
+        content.style.display = "none";
+        button.textContent = "Learn More";
+      }
+    }
+  </script>
+
+  <script>
+    function openAboutPage() {
+        document.getElementById("about").scrollIntoView({
+            behavior: "smooth"  // Enables smooth scrolling
+        });
+    }
+    function scrollToServices() {
+        document.getElementById("ourservices").scrollIntoView({
+            behavior: "smooth"  // Enables smooth scrolling
+        });
+    }
+    function scrollToDownload() {
+        document.getElementById("download_section").scrollIntoView({
+            behavior: "smooth"  // Enables smooth scrolling
+        });
+    }
+    function scrollToDocumentation() {
+        document.getElementById("documentation").scrollIntoView({
+            behavior: "smooth"  // Enables smooth scrolling
+        });
+    }
+</script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Secure Component Manager. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
+
+</body>
+</html>
